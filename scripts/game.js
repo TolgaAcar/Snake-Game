@@ -19,10 +19,13 @@ function main(currentTime) {
 		if (confirm("You lost. Press ok to restart.")) {
 			window.location.reload();
 		}
+
 		return;
 	}
+
 	window.requestAnimationFrame(main);
 	const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
+
 	if (secondsSinceLastRender < 1 / SNAKE_SPEED) {
 		return;
 	}
